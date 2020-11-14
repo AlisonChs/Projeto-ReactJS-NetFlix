@@ -1,13 +1,15 @@
 import React from 'react';
-import Menu from './components/Menu';
+import Routes from './routes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
 
 function App() {
-  return (
-    <div>
-      <Menu />
-
-    </div>
-  );
+	return (
+		<>
+			<ToastContainer />
+			<Routes />
+		</>
+	);
 }
 
 export default App;
