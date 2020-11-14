@@ -1,48 +1,37 @@
 import React from 'react';
-import { VideoCardGroupContainer, VideoCardList, Title, ExtraLink } from './styles';
-import VideoCard from './components/VideoCard';
+import { CardGroup, Title } from './styles';
+import VideoCard from '../VideoCard';
+import { SliderItem } from './components/Slider/styles';
+import Slider from './components/Slider/';
 
-function VideoCardGroup({
-  ignoreFirstVideo,
-  category,
-}) {
-  const categoryTitle = category.titulo;
-  const categoryColor = category.cor;
-  const categoryExtraLink = category.link_extra;
-  const videos = category.videos;
-  return (
-    <VideoCardGroupContainer>
-      {categoryTitle && (
-        <>
-          <Title style={{ backgroundColor: categoryColor || 'red' }}>
-            {categoryTitle}
-          </Title>
-          {categoryExtraLink && 
-            <ExtraLink href={categoryExtraLink.url} target="_blank">
-              {categoryExtraLink.text}  
-            </ExtraLink>
-          }
-        </>
-      )}
-      <VideoCardList>
-        {videos.map((video, index) => {
-          if (ignoreFirstVideo && index === 0) {
-            return null;
-          }
+export default function Carousel({ category }) {
+	const categoryTitle = category.titulo;
+	const categoryColor = category.cor;
+	const videos = category.videos;
 
-          return (
-            <li key={video.titulo}>
-              <VideoCard
-                videoTitle={video.titulo}
-                videoURL={video.url}
-                categoryColor={categoryColor}
-              />
-            </li>
-          );
-        })}
-      </VideoCardList>
-    </VideoCardGroupContainer>
-  );
+	return (
+		<CardGroup>
+			{categoryTitle && (
+				<>
+					<Title style={{ backgroundColor: categoryColor || 'red' }}>
+						{categoryTitle}
+					</Title>
+				</>
+			)}
+			<Slider>
+				{videos.map((video, index) => {
+					return (
+						<SliderItem key={video.titulo}>
+							<VideoCard
+								videoTitle={video.titulo}
+								videoURL={video.url}
+								categoryColor={categoryColor}
+							/>
+						</SliderItem>
+					);
+				})}
+			</Slider>
+		</CardGroup>
+	);
 }
 
-export default VideoCardGroup;
