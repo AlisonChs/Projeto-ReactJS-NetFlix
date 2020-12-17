@@ -48,8 +48,9 @@ yarn start // npm start
 Assim que o processo terminar, automaticamente será aberta no seu navegador a página `localhost:3000` contendo o projeto desenvolvido.
 
 ### :exclamation: Ver no subdomínio - Servidor (Website)
-Veja o resultado aproximado hospedado no subdominio da NETLIFY:
-`https://5fdb5578b6db8df5442e6b45--devflix-alison.netlify.app`
+Veja o resultado aproximado hospedado no subdominio da NETLIFY: <br>
+`https://5fdb5578b6db8df5442e6b45--devflix-alison.netlify.app` <br> <br>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3c0b1f83-b187-44c7-89a5-62c521ec02e6/deploy-status)](https://app.netlify.com/sites/devflix-alison/deploys)
 
 ## :recycle: Como contribuir
 - Primeiro, deixe uma ⭐ se você gostou!
